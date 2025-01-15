@@ -1,5 +1,3 @@
-from logging.config import dictConfig
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 

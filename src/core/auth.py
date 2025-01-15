@@ -1,10 +1,9 @@
 from typing import Any
 
-from fastapi import Depends, HTTPException, status
+from fastapi import Depends
 from fastapi.security import OAuth2PasswordBearer
 
 from src.core.crypto import decode_access_token
-from src.models import User
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 

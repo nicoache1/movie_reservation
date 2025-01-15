@@ -1,0 +1,29 @@
+services:
+  devcontainer:
+    env_file: devcontainer.env
+    command: sleep infinity
+    build: .
+    ports:
+      - '8000:8000'
+    volumes:
+      - source: ..
+        target: /workspace
+        type: bind
+      - source: cache
+        target: /root/.cache
+        type: volume
+
+  postgres:
+    image: postgres:16
+    pull_policy: always
+    hostname: db
+    restart: unless-stopped
+    env_file: devcontainer.env
+    volumes:
+      - source: postgres
+        target: /var/lib/postgresql/data
+        type: volume
+
+volumes:
+  postgres: {}
+  cache: {}

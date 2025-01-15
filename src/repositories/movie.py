@@ -1,6 +1,5 @@
 from typing import List
 
-from sqlalchemy import text
 from sqlmodel import Session, select
 
 from src.models.movie import Movie

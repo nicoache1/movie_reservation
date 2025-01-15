@@ -35,4 +35,7 @@ class ShowtimeRepository:
             {"movie_id": movie_id},
         )
         rows = result.fetchall()
-        return [Showtime(**dict(row)) for row in rows]
+        return [
+            Showtime.model_validate(row if isinstance(row, dict) else row._asdict())
+            for row in rows
+        ]

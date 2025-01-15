@@ -1,0 +1,25 @@
+{
+    "include": [
+        "src"
+    ],
+    "typeCheckingMode": "basic",
+    "exclude": [
+        "**/node_modules",
+        "**/__pycache__",
+        "bazel*",
+        "project",
+        "target",
+        "scripts"
+    ],
+    // "reportArgumentType": "none",
+    "reportAssignmentType": "none",
+    "reportAttributeAccessIssue": "none",
+    "reportCallIssue": "none",
+    "reportGeneralTypeIssues": "none",
+    "reportIncompatibleMethodOverride": "none",
+    "reportIncompatibleVariableOverride": "none",
+    "reportOperatorIssue": "none",
+    "reportOptionalIterable": "none",
+    "reportOptionalMemberAccess": "none",
+    "reportOptionalSubscript": "none"
+}

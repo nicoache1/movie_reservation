@@ -13,7 +13,7 @@ router = APIRouter()
 
 @router.get("/{movie_id}/showtimes", response_model=List[Showtime])
 @inject
-def register_user(
+def get_showtimes_by_movie_id(
     movie_id: int,
     showtime_controller: ShowtimeController = Depends(
         Provide[Container.showtime_controller]
@@ -32,7 +32,7 @@ def register_user(
 
 @router.get("/{movie_id}/showtimes/raw", response_model=List[Showtime])
 @inject
-def register_user(
+def get_showtimes_by_movie_raw(
     movie_id: int,
     showtime_controller: ShowtimeController = Depends(
         Provide[Container.showtime_controller]

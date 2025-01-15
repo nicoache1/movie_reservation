@@ -20,17 +20,15 @@ def movie_controller(mock_repo):
 
 
 def test_get_movies_by_showtime(movie_controller, mock_repo):
-    
+
     fake_showtime_id = 123
     fake_movies = [Movie(id=1, title="Movie A"), Movie(id=2, title="Movie B")]
     mock_repo.get_all_movies_by_showtime.return_value = fake_movies
 
-    
     result = movie_controller.get_movies_by_showtime(showtime_id=fake_showtime_id)
 
-    
     mock_repo.get_all_movies_by_showtime.assert_called_once_with(
         showtime_id=fake_showtime_id
     )
-    
+
     assert result == fake_movies
